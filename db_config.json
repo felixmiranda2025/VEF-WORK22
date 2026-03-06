@@ -1,0 +1,7 @@
+{
+  "host":     "192.168.1.100",
+  "port":     5432,
+  "database": "vef_db",
+  "user":     "vef_user",
+  "password": "VefPass2024#Segura!"
+}
