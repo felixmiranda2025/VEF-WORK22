@@ -1,0 +1,38 @@
+// netlify/functions/test-db/test-db.mjs
+import { neon } from '@neondatabase/serverless';
+
+export async function handler(event) {
+    // Tu función usará la variable de entorno DATABASE_URL que configuramos
+    const sql = neon(process.env.DATABASE_URL);
+    
+    try {
+        // Probar la conexión
+        const result = await sql`SELECT version();`;
+        
+        return {
+            statusCode: 200,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify({
+                success: true,
+                message: '✅ Conexión exitosa a PostgreSQL',
+                version: result[0].version
+            })
+        };
+    } catch (error) {
+        console.error('Error:', error);
+        return {
+            statusCode: 500,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify({
+                success: false,
+                error: error.message
+            })
+        };
+    }
+}

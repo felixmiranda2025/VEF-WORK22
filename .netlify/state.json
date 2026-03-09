@@ -1,0 +1,21 @@
+{
+	"siteId": "f348de8b-50cc-48aa-a983-57fe2b897160",
+	"geolocation": {
+		"data": {
+			"city": "Mexicaltzingo",
+			"country": {
+				"code": "MX",
+				"name": "Mexico"
+			},
+			"subdivision": {
+				"code": "MEX",
+				"name": "México"
+			},
+			"timezone": "America/Mexico_City",
+			"latitude": 19.212,
+			"longitude": -99.5774,
+			"postalCode": "52180"
+		},
+		"timestamp": 1773067531093
+	}
+}
